@@ -1,0 +1,185 @@
+
+/* Stylesheet */
+
+/* load local font  */
+@font-face {
+  font-family: "Clash";
+  src: url(fonts/ClashGrotesk-Variable.woff2), url(fonts/ClashGrotesk-Variable.woff);
+}
+
+body {
+	/* base styling */
+	margin: 0;
+
+	
+  /* apply local font */
+	font-family: "Clash";
+	
+	/* typogrpahy */
+  font-size: 1.25em;
+	line-height: 1.5em;  
+  color: teal;
+  
+}
+
+/* Nav Menu */
+nav {
+  background: teal;
+  width: 100%;
+  
+  /* position'ing */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  
+  /*  alignment  */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Nav Links */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 40px;
+}
+
+/* Main : Hide Menu */
+main {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  min-height: 100vh;
+  text-align: center;
+  
+  
+  /* x translate matches width of navigation */
+  transform: translate( 0, 0);
+    /* animate with transition */
+  transition: transform .25s;
+  
+}
+
+/* Main Content : Show Menu */
+main.open {
+  transform: translate( 0, 100px);
+  
+}
+
+/* Menu Button */
+a.toggle-nav {
+  display: flex;
+  padding-top: 1em;
+  text-decoration: none;
+  color: black;
+  justify-content: end;
+  margin-right: 20px;
+}
+
+/* Menu Button Icon */
+a.toggle-nav img {
+  vertical-align: middle;
+}
+
+h1 {
+  font-family: "Clash";
+ font-weight: 300;
+}
+
+a:hover {
+  color: grey
+}
+
+section {
+  height: 80vh;
+      display: flex;
+  flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+article {
+  background-color: white;
+  padding: 20px;
+  width: 70%;
+margin: auto;
+  box-shadow: 0 3px 10px rgb(170,170,170, .3)
+}
+
+article img {
+  width: 60%;
+  margin-bottom: 25px;
+}
+
+footer p {
+  font-size: .5em;
+  color: teal;
+  position: fixed;
+  bottom: 0;
+  right:0;
+  left:0;
+  
+}
+
+
+
+/* Mobile 
+  0 to 26em (416 pixels)
+*/
+@media only screen and (min-width: 0) { 
+  
+  h2:before {
+    content: "Mobile";
+  }
+  
+  nav {
+    height: 100px;;
+  }
+  
+  main.open {
+    transform: translate( 0, 100px);
+  }
+  
+}
+
+/* Tablet 
+  26em (416 pixels) to 72em (1,152 pixels)
+*/
+@media only screen and (min-width: 26em)  {
+  
+  h2:before {
+    content: "Tablet";
+  }
+  
+  nav {
+    height: 100px
+  }
+  
+  main.open {
+    transform: translate( 0, 100px);
+  }
+
+  
+}
+
+/* Desktop 
+   72em (1,152 pixels) to 90em (1440 pixels)
+*/
+@media screen and (min-width: 72em)  { 
+  
+  h2:before {
+    content: "Desktop";
+  }
+  
+  nav {
+    width: 100%;
+  }
+  
+  main.open {
+    transform: translate( 0, 100px);
+  }
+
+}
